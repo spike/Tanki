@@ -15,17 +15,19 @@ object DummyContent {
      * An array of sample (dummy) items.
      */
     val ITEMS: MutableList<DummyItem> = ArrayList()
+    val decks: MutableList<String> = arrayListOf("French", "Japanese", "Medicine", "Programming", "Bird Watching")
 
     /**
      * A map of sample (dummy) items, by ID.
      */
     val ITEM_MAP: MutableMap<String, DummyItem> = HashMap()
+    private var count = decks.size
 
     private val COUNT = 25
 
     init {
         // Add some sample items.
-        for (i in 1..COUNT) {
+        for (i in 1..count) {
             addItem(createDummyItem(i))
         }
     }
@@ -36,15 +38,15 @@ object DummyContent {
     }
 
     private fun createDummyItem(position: Int): DummyItem {
-        return DummyItem(position.toString(), "Item " + position, makeDetails(position))
+        return DummyItem(position.toString(), decks[position -1], makeDetails(position))
     }
 
     private fun makeDetails(position: Int): String {
         val builder = StringBuilder()
-        builder.append("Details about Item: ").append(position)
-        for (i in 0..position - 1) {
+        builder.append("Details about Deck: ").append(position)
+        // for (i in 0..position - 1) {
             builder.append("\nMore details information here.")
-        }
+        // }
         return builder.toString()
     }
 

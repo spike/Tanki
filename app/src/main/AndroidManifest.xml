@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tanki">
         <activity
-            android:name=".DeckListActivity"
-            android:label="@string/title_deck_list"
+            android:name=".TopicListActivity"
+            android:label="@string/title_topic_list"
             android:theme="@style/Theme.Tanki.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,13 +20,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DeckDetailActivity"
-            android:label="@string/title_deck_detail"
-            android:parentActivityName=".DeckListActivity"
+            android:name=".TopicDetailActivity"
+            android:label="@string/title_topic_detail"
+            android:parentActivityName=".TopicListActivity"
             android:theme="@style/Theme.Tanki.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.tanki.flashcards.DeckListActivity" />
+                android:value="com.tanki.flashcards.TopicListActivity" />
         </activity>
         <activity android:name=".MainActivity">
 

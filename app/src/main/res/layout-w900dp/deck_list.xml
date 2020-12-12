@@ -10,7 +10,7 @@
     android:divider="?android:attr/dividerHorizontal"
     android:orientation="horizontal"
     android:showDividers="middle"
-    tools:context=".DeckListActivity">
+    tools:context=".TopicListActivity">
 
     <!--
     This layout is a two-pane layout for the Decks master/detail flow.
@@ -25,7 +25,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         app:layoutManager="LinearLayoutManager"
-        tools:context="com.tanki.flashcards.DeckListActivity"
+        tools:context="com.tanki.flashcards.TopicListActivity"
         tools:listitem="@layout/deck_list_content" />
 
     <FrameLayout

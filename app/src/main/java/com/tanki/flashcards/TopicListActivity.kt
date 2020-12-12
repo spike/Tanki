@@ -19,11 +19,11 @@ import com.tanki.flashcards.dummy.DummyContent
  * An activity representing a list of Pings. This activity
  * has different presentations for handset and tablet-size devices. On
  * handsets, the activity presents a list of items, which when touched,
- * lead to a [DeckDetailActivity] representing
+ * lead to a [TopicDetailActivity] representing
  * item details. On tablets, the activity presents the list of items and
  * item details side-by-side using two vertical panes.
  */
-class DeckListActivity : AppCompatActivity() {
+class TopicListActivity : AppCompatActivity() {
 
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
@@ -60,7 +60,7 @@ class DeckListActivity : AppCompatActivity() {
     }
 
     class SimpleItemRecyclerViewAdapter(
-        private val parentActivity: DeckListActivity,
+        private val parentActivity: TopicListActivity,
         private val values: List<DummyContent.DummyItem>,
         private val twoPane: Boolean
     ) :
@@ -72,9 +72,9 @@ class DeckListActivity : AppCompatActivity() {
             onClickListener = View.OnClickListener { v ->
                 val item = v.tag as DummyContent.DummyItem
                 if (twoPane) {
-                    val fragment = DeckDetailFragment().apply {
+                    val fragment = TopicDetailFragment().apply {
                         arguments = Bundle().apply {
-                            putString(DeckDetailFragment.ARG_ITEM_ID, item.id)
+                            putString(TopicDetailFragment.ARG_ITEM_ID, item.id)
                         }
                     }
                     parentActivity.supportFragmentManager
@@ -82,8 +82,8 @@ class DeckListActivity : AppCompatActivity() {
                         .replace(R.id.deck_detail_container, fragment)
                         .commit()
                 } else {
-                    val intent = Intent(v.context, DeckDetailActivity::class.java).apply {
-                        putExtra(DeckDetailFragment.ARG_ITEM_ID, item.id)
+                    val intent = Intent(v.context, TopicDetailActivity::class.java).apply {
+                        putExtra(TopicDetailFragment.ARG_ITEM_ID, item.id)
                     }
                     v.context.startActivity(intent)
                 }
