@@ -10,5 +10,4 @@ Online API:
 Features:
 * List of flash cards
 * Flash card view
-* All the data is hard-coded
 * JUnit tests
