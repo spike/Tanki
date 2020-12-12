@@ -4,7 +4,7 @@ Tanki is a demo flashcard Android application built to demonstrate the best prac
 
 Online API:
 * Dummy API hosted [here](https://designer.mocky.io) on [Mocky.io](https://designer.mocky.io)
-* Hard-coded API [here](https://github.com/spike/dummy-api) on github (because Mocky doesn't support images)
+* API also [here](https://github.com/spike/dummy-api) on github (since Mocky doesn't support images)
 
 Tech Stack:
 * Json To Kotlin Android Studio [plugin](https://plugins.jetbrains.com/plugin/9960-json-to-kotlin-class-jsontokotlinclass-)
