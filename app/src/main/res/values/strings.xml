@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Tanki</string>
+    <string name="title_deck_list">Decks</string>
+    <string name="title_deck_detail">Deck Detail</string>
 </resources>
