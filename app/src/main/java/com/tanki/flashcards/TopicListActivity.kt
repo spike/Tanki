@@ -2,6 +2,7 @@ package com.tanki.flashcards
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.core.widget.NestedScrollView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
@@ -12,17 +13,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 
 import com.tanki.flashcards.dummy.DummyContent
+import com.tanki.flashcards.model.Deck
+import com.tanki.flashcards.model.MainViewModel
+import com.tanki.flashcards.model.MainViewModelFactory
+import com.tanki.flashcards.repository.Repository
 
-/**
- * An activity representing a list of Pings. This activity
- * has different presentations for handset and tablet-size devices. On
- * handsets, the activity presents a list of items, which when touched,
- * lead to a [TopicDetailActivity] representing
- * item details. On tablets, the activity presents the list of items and
- * item details side-by-side using two vertical panes.
- */
+
 class TopicListActivity : AppCompatActivity() {
 
     /**
@@ -30,10 +30,22 @@ class TopicListActivity : AppCompatActivity() {
      * device.
      */
     private var twoPane: Boolean = false
+    private lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_deck_list)
+
+
+        val repository = Repository()
+        val viewModelFactory = MainViewModelFactory(repository)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
+        viewModel.getDeck()
+        viewModel.myResponse.observe(this, Observer { response ->
+            Log.d("Response", response.deckId.toString())
+            Log.d("Response", response.topic.toString())
+        })
+
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
