@@ -1,6 +1,6 @@
 # Tanki
 
-Tanki is a demo flashcard Android application built to demonstrate the best practices of modern Android development.
+Tanki is a demo flashcard Android application built to demonstrate the best practices of modern Android development. 
 
 Tech Stack:
 * Dummy API json hosted [here](https://flashcards.free.beeceptor.com) on [Beeceptor](https://beeceptor.com/)
