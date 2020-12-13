@@ -36,14 +36,20 @@ class TopicListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_deck_list)
 
+        val deckList = findViewById<TextView>(R.id.deck_info)
 
         val repository = Repository()
         val viewModelFactory = MainViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
         viewModel.getDeck()
         viewModel.myResponse.observe(this, Observer { response ->
-            Log.d("Response", response.deckId.toString())
-            Log.d("Response", response.topic.toString())
+            if (response.isSuccessful) {
+                Log.d("Response: ", response.body()?.deckId.toString())
+                deckList.text = response.body()?.topic!!
+            } else {
+                Log.d("Response: ", response.errorBody().toString())
+                deckList.text = response.code().toString()
+            }
         })
 
 
@@ -56,7 +62,7 @@ class TopicListActivity : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
 
-        if (findViewById<NestedScrollView>(R.id.deck_detail_container) != null) {
+/*        if (findViewById<NestedScrollView>(R.id.deck_detail_container) != null) {
             // The detail container view will be present only in the
             // large-screen layouts (res/values-w900dp).
             // If this view is present, then the
@@ -64,7 +70,7 @@ class TopicListActivity : AppCompatActivity() {
             twoPane = true
         }
 
-        setupRecyclerView(findViewById(R.id.deck_list))
+        setupRecyclerView(findViewById(R.id.deck_list))*/
     }
 
     private fun setupRecyclerView(recyclerView: RecyclerView) {
