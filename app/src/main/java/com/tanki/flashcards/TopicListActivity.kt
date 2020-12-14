@@ -13,8 +13,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.tanki.flashcards.adapter.MyAdapter
 
 import com.tanki.flashcards.dummy.DummyContent
 import com.tanki.flashcards.model.Deck
@@ -25,18 +28,15 @@ import com.tanki.flashcards.repository.Repository
 
 class TopicListActivity : AppCompatActivity() {
 
-    /**
-     * Whether or not the activity is in two-pane mode, i.e. running on a tablet
-     * device.
-     */
     private var twoPane: Boolean = false
     private lateinit var viewModel: MainViewModel
+    private val myAdapter by lazy { MyAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_deck_list)
 
-        val deckList = findViewById<TextView>(R.id.deck_info)
+       // val deckList = findViewById<TextView>(R.id.deck_info)
 
         val repository = Repository()
         val viewModelFactory = MainViewModelFactory(repository)
@@ -44,18 +44,11 @@ class TopicListActivity : AppCompatActivity() {
         viewModel.getDecks(3)
         viewModel.myResponse3.observe(this, Observer { response ->
             if (response.isSuccessful) {
-
-                deckList.text = response.body()?.joinToString()!!
-                response.body()?.forEach {
-                    Log.d("Response: ", it.userId.toString())
-                    Log.d("Response: ", it.deckId.toString())
-                    Log.d("Response: ", it.topic)
-                    Log.d("Response: ", "------------------------")
-                }
+                response.body()?.let { myAdapter.setData(it) }
 
             } else {
                 Log.d("Response: ", response.errorBody().toString())
-                deckList.text = response.code().toString()
+                Toast.makeText(this, response.code(), Toast.LENGTH_LONG).show()
             }
         })
 
@@ -68,14 +61,9 @@ class TopicListActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
-/*        val deckId: Int,
-        val topic: String,
-        val userId: Int,
-        val size: Int,
-        val due: Int*/
 
 
-/*        if (findViewById<NestedScrollView>(R.id.deck_detail_container) != null) {
+        if (findViewById<NestedScrollView>(R.id.deck_detail_container) != null) {
             // The detail container view will be present only in the
             // large-screen layouts (res/values-w900dp).
             // If this view is present, then the
@@ -83,14 +71,16 @@ class TopicListActivity : AppCompatActivity() {
             twoPane = true
         }
 
-        setupRecyclerView(findViewById(R.id.deck_list))*/
+        setupRecyclerView(findViewById(R.id.deck_list))
     }
 
     private fun setupRecyclerView(recyclerView: RecyclerView) {
-        recyclerView.adapter = SimpleItemRecyclerViewAdapter(this, DummyContent.ITEMS, twoPane)
+        recyclerView.adapter = myAdapter
+        recyclerView.layoutManager = LinearLayoutManager(this)
+      //  recyclerView.adapter = SimpleItemRecyclerViewAdapter(this, DummyContent.ITEMS, twoPane)
     }
 
-    class SimpleItemRecyclerViewAdapter(
+/*    class SimpleItemRecyclerViewAdapter(
         private val parentActivity: TopicListActivity,
         private val values: List<DummyContent.DummyItem>,
         private val twoPane: Boolean
@@ -144,5 +134,5 @@ class TopicListActivity : AppCompatActivity() {
             val idView: TextView = view.findViewById(R.id.id_text)
             val contentView: TextView = view.findViewById(R.id.content)
         }
-    }
+    } */
 }

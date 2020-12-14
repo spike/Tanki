@@ -25,16 +25,9 @@
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" >
 
-        <TextView
-            android:id="@+id/deck_info"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Topic"
-            android:textSize="30sp" />
-        <!--
-                <include layout="@layout/deck_list" />-->
+        <include layout="@layout/deck_list" />
     </FrameLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
