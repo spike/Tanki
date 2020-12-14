@@ -41,11 +41,18 @@ class TopicListActivity : AppCompatActivity() {
         val repository = Repository()
         val viewModelFactory = MainViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
-        viewModel.getDeck()
-        viewModel.myResponse.observe(this, Observer { response ->
+        viewModel.getDecks(3)
+        viewModel.myResponse3.observe(this, Observer { response ->
             if (response.isSuccessful) {
-                Log.d("Response: ", response.body()?.deckId.toString())
-                deckList.text = response.body()?.topic!!
+
+                deckList.text = response.body()?.joinToString()!!
+                response.body()?.forEach {
+                    Log.d("Response: ", it.userId.toString())
+                    Log.d("Response: ", it.deckId.toString())
+                    Log.d("Response: ", it.topic)
+                    Log.d("Response: ", "------------------------")
+                }
+
             } else {
                 Log.d("Response: ", response.errorBody().toString())
                 deckList.text = response.code().toString()
@@ -61,6 +68,12 @@ class TopicListActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+/*        val deckId: Int,
+        val topic: String,
+        val userId: Int,
+        val size: Int,
+        val due: Int*/
+
 
 /*        if (findViewById<NestedScrollView>(R.id.deck_detail_container) != null) {
             // The detail container view will be present only in the

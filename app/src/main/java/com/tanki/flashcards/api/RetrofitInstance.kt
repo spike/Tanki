@@ -18,7 +18,3 @@ object RetrofitInstance {
 
 
 }
-
-// https://flashcards.free.beeceptor.com
-
-// https://run.mocky.io/v3/
