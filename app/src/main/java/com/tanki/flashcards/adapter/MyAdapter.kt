@@ -13,7 +13,7 @@ class MyAdapter: RecyclerView.Adapter<MyAdapter.MyViewHolder> () {
 
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-       // val idView: TextView = itemView.findViewById(R.id.id_text)
+        val cardTotalView: TextView = itemView.findViewById(R.id.card_total)
         val contentView: TextView = itemView.findViewById(R.id.content)
     }
 
@@ -31,8 +31,8 @@ class MyAdapter: RecyclerView.Adapter<MyAdapter.MyViewHolder> () {
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = myList[position]
-       // holder.idView.text = item.deckId.toString()
         holder.contentView.text = item.topic
+        holder.cardTotalView.text = item.size.toString()
 
         with(holder.itemView) {
             tag = item

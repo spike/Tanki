@@ -36,8 +36,6 @@ class TopicListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_deck_list)
 
-       // val deckList = findViewById<TextView>(R.id.deck_info)
-
         val repository = Repository()
         val viewModelFactory = MainViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)

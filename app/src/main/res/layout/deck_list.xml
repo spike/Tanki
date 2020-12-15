@@ -6,8 +6,8 @@
     android:name="com.tanki.flashcards.DeckListFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
+    android:layout_marginLeft="40dp"
+    android:layout_marginRight="40dp"
     app:layoutManager="LinearLayoutManager"
     tools:context=".TopicListActivity"
     tools:listitem="@layout/deck_list_content" />
