@@ -78,7 +78,7 @@ class TopicListActivity : AppCompatActivity() {
       //  recyclerView.adapter = SimpleItemRecyclerViewAdapter(this, DummyContent.ITEMS, twoPane)
     }
 
-/*    class SimpleItemRecyclerViewAdapter(
+    /*class SimpleItemRecyclerViewAdapter(
         private val parentActivity: TopicListActivity,
         private val values: List<DummyContent.DummyItem>,
         private val twoPane: Boolean

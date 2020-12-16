@@ -1,11 +1,17 @@
 package com.tanki.flashcards.adapter
 
+import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.tanki.flashcards.R
+import com.tanki.flashcards.TopicDetailActivity
+import com.tanki.flashcards.TopicDetailFragment
+import com.tanki.flashcards.dummy.DummyContent
 import com.tanki.flashcards.model.Deck
 
 class MyAdapter: RecyclerView.Adapter<MyAdapter.MyViewHolder> () {
@@ -16,8 +22,6 @@ class MyAdapter: RecyclerView.Adapter<MyAdapter.MyViewHolder> () {
         val cardTotalView: TextView = itemView.findViewById(R.id.card_total)
         val contentView: TextView = itemView.findViewById(R.id.content)
     }
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.deck_list_content, parent, false)
