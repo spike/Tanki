@@ -11,9 +11,9 @@ import android.view.MenuItem
  * An activity representing a single Deck detail screen. This
  * activity is only used on narrow width devices. On tablet-size devices,
  * item details are presented side-by-side with a list of items
- * in a [TopicListActivity].
+ * in a [DeckListActivity].
  */
-class TopicDetailActivity : AppCompatActivity() {
+class DeckDetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,11 +40,11 @@ class TopicDetailActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             // Create the detail fragment and add it to the activity
             // using a fragment transaction.
-            val fragment = TopicDetailFragment().apply {
+            val fragment = DeckDetailFragment().apply {
                 arguments = Bundle().apply {
                     putString(
-                        TopicDetailFragment.ARG_ITEM_ID,
-                        intent.getStringExtra(TopicDetailFragment.ARG_ITEM_ID)
+                        DeckDetailFragment.ARG_ITEM_ID,
+                        intent.getStringExtra(DeckDetailFragment.ARG_ITEM_ID)
                     )
                 }
             }
@@ -64,7 +64,7 @@ class TopicDetailActivity : AppCompatActivity() {
                 //
                 // http://developer.android.com/design/patterns/navigation.html#up-vs-back
 
-                navigateUpTo(Intent(this, TopicListActivity::class.java))
+                navigateUpTo(Intent(this, DeckListActivity::class.java))
                 true
             }
             else -> super.onOptionsItemSelected(item)

@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.tanki.flashcards">
 
-    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tanki">
         <activity
-            android:name=".TopicListActivity"
+            android:name=".FlashCardActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_flash_card"
+            android:theme="@style/Theme.Tanki.Fullscreen"></activity>
+        <activity
+            android:name=".DeckListActivity"
             android:label="@string/title_topic_list"
             android:theme="@style/Theme.Tanki.NoActionBar">
             <intent-filter>
@@ -21,17 +25,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TopicDetailActivity"
+            android:name=".DeckDetailActivity"
             android:label="@string/title_topic_detail"
-            android:parentActivityName=".TopicListActivity"
+            android:parentActivityName=".DeckListActivity"
             android:theme="@style/Theme.Tanki.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.tanki.flashcards.TopicListActivity" />
+                android:value="com.tanki.flashcards.DeckListActivity" />
         </activity>
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

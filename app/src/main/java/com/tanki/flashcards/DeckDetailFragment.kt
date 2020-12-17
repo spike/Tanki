@@ -11,11 +11,11 @@ import com.tanki.flashcards.dummy.DummyContent
 
 /**
  * A fragment representing a single Deck detail screen.
- * This fragment is either contained in a [TopicListActivity]
- * in two-pane mode (on tablets) or a [TopicDetailActivity]
+ * This fragment is either contained in a [DeckListActivity]
+ * in two-pane mode (on tablets) or a [DeckDetailActivity]
  * on handsets.
  */
-class TopicDetailFragment : Fragment() {
+class DeckDetailFragment : Fragment() {
 
     /**
      * The dummy content this fragment is presenting.

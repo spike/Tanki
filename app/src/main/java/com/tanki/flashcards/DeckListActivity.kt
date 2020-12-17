@@ -26,7 +26,7 @@ import com.tanki.flashcards.model.MainViewModelFactory
 import com.tanki.flashcards.repository.Repository
 
 
-class TopicListActivity : AppCompatActivity() {
+class DeckListActivity : AppCompatActivity() {
 
     private var twoPane: Boolean = false
     private lateinit var viewModel: MainViewModel
@@ -43,7 +43,6 @@ class TopicListActivity : AppCompatActivity() {
         viewModel.myResponse3.observe(this, Observer { response ->
             if (response.isSuccessful) {
                 response.body()?.let { myAdapter.setData(it) }
-
             } else {
                 Log.d("Response: ", response.errorBody().toString())
                 Toast.makeText(this, response.code(), Toast.LENGTH_LONG).show()

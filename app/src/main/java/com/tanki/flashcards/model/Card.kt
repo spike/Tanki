@@ -7,5 +7,9 @@ data class Card(
     val deckId: Int,
     val front: String,
     val back: String,
-    val nextDue: Date
+    // archived: Boolean
+    // suspended: Boolean
+    // whiteboardEnabled: Boolean (check parent deck first)
+    // val nextDue: Date
+    val nextDue: Int
 )

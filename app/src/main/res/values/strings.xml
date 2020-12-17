@@ -2,4 +2,7 @@
     <string name="app_name">Tanki</string>
     <string name="title_topic_list">Topics</string>
     <string name="title_topic_detail">Topic</string>
+    <string name="title_activity_flash_card">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
