@@ -46,6 +46,8 @@ class MyAdapter: RecyclerView.Adapter<MyAdapter.MyViewHolder> () {
         val item = myList[position]
         holder.contentView.text = item.topic
         holder.cardTotalView.text = item.size.toString()
+        // holder.cardTotalView.text = item.lastEdited.toString()
+      //  val expectedDate = simpleDateFormat.parse(item.lastEdited.toString())
 
         with(holder.itemView) {
             tag = item

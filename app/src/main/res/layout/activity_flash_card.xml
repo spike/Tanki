@@ -32,7 +32,7 @@
                 android:layout_weight="1"
                 android:textColor="@color/white"
                 android:backgroundTint="#93261E"
-                android:text="try again" />
+                android:text="10 min" />
             <Button
                 android:id="@+id/button_hard"
                 style="?android:attr/buttonBarButtonStyle"
@@ -41,7 +41,7 @@
                 android:layout_weight="1"
                 android:textColor="@color/white"
                 android:backgroundTint="#0B0C0B"
-                android:text="hard" />
+                android:text="6 d"/>
             <Button
                 android:id="@+id/button_good"
                 style="?android:attr/buttonBarButtonStyle"
@@ -49,8 +49,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textColor="@color/white"
-                android:backgroundTint="#2D532F"
-                android:text="good" />
+                android:backgroundTint="#4CAF50"
+                android:text="14 d" />
             <Button
                 android:id="@+id/button_easy"
                 style="?android:attr/buttonBarButtonStyle"
@@ -58,8 +58,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textColor="@color/white"
-                android:backgroundTint="#4CAF50"
-                android:text="easy" />
+                android:backgroundTint="#2196F3"
+                android:text="22 d" />
 
         </LinearLayout>
     </FrameLayout>
