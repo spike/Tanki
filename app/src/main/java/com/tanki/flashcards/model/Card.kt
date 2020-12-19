@@ -11,5 +11,6 @@ data class Card(
     // suspended: Boolean
     // whiteboardEnabled: Boolean (check parent deck first)
     // val nextDue: Date
+    // imported
     val nextDue: Int
 )
