@@ -10,7 +10,7 @@ data class Deck (
     // val priority: Int,
     // val numberOfCardsDue: Int,
     // val archived: Boolean,
-    // val suspended: ??
+    // val suspended: ?
         // val deleted: Boolean,
         // val deletedOn: Date,
     // val whiteboardEnabled: Boolean,
