@@ -13,7 +13,7 @@ import android.view.MenuItem
  * item details are presented side-by-side with a list of items
  * in a [DeckListActivity].
  */
-class DeckDetailActivity : AppCompatActivity() {
+class DeckListLargeScreenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

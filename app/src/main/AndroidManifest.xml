@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DeckDetailActivity"
+            android:name=".DeckListLargeScreenActivity"
             android:label="@string/title_topic_detail"
             android:parentActivityName=".DeckListActivity"
             android:theme="@style/Theme.Tanki.NoActionBar">
@@ -33,7 +33,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.tanki.flashcards.DeckListActivity" />
         </activity>
-        <activity android:name=".MainActivity"></activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

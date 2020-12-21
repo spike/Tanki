@@ -12,7 +12,7 @@ import com.tanki.flashcards.dummy.DummyContent
 /**
  * A fragment representing a single Deck detail screen.
  * This fragment is either contained in a [DeckListActivity]
- * in two-pane mode (on tablets) or a [DeckDetailActivity]
+ * in two-pane mode (on tablets) or a [DeckListLargeScreenActivity]
  * on handsets.
  */
 class DeckDetailFragment : Fragment() {
