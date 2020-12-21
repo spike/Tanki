@@ -37,7 +37,7 @@ class DeckListLargeScreenActivity : AppCompatActivity() {
         //
         // http://developer.android.com/guide/components/fragments.html
         //
-        if (savedInstanceState == null) {
+       /* if (savedInstanceState == null) {
             // Create the detail fragment and add it to the activity
             // using a fragment transaction.
             val fragment = DeckDetailFragment().apply {
@@ -52,7 +52,7 @@ class DeckListLargeScreenActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction()
                 .add(R.id.deck_detail_container, fragment)
                 .commit()
-        }
+        }*/
     }
 
     override fun onOptionsItemSelected(item: MenuItem) =

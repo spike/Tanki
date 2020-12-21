@@ -34,7 +34,7 @@ class DeckListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_deck_list)
+        setContentView(R.layout.activity_deck_list_2_pane)
 
         val repository = Repository()
         val viewModelFactory = MainViewModelFactory(repository)
