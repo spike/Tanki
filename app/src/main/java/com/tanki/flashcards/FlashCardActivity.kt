@@ -81,6 +81,7 @@ class FlashCardActivity : AppCompatActivity() {
         // while interacting with the UI.
 
        // findViewById<Button>(R.id.dummy_button).setOnTouchListener(delayHideTouchListener)
+
         val topic = intent.getStringExtra("topic")
         fullscreenContent.text = topic
 
@@ -120,7 +121,7 @@ class FlashCardActivity : AppCompatActivity() {
 
        /* hideHandler.postDelayed(hidePart2Runnable, UI_ANIMATION_DELAY.toLong())
 */
-        fullscreenContentControls.visibility = View.INVISIBLE
+        fullscreenContentControls.visibility = View.VISIBLE
 
     }
 

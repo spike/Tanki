@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/fullscreenBackgroundColor"
+    android:background="@color/white"
     android:theme="@style/ThemeOverlay.Tanki.FullscreenContainer"
     tools:context=".FlashCardActivity">
 
@@ -20,6 +20,7 @@
             style="@style/Widget.Theme.Tanki.ButtonBar.Fullscreen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/design_default_color_background"
             android:layout_gravity="bottom|center_horizontal"
             android:orientation="horizontal"
             tools:ignore="UselessParent">
@@ -31,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textColor="@color/white"
-                android:backgroundTint="#93261E"
+                android:backgroundTint="@color/design_default_color_error"
                 android:text="10 min" />
             <Button
                 android:id="@+id/button_hard"
@@ -40,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textColor="@color/white"
-                android:backgroundTint="#0B0C0B"
+                android:backgroundTint="@color/design_default_color_on_secondary"
                 android:text="6 d"/>
             <Button
                 android:id="@+id/button_good"
@@ -57,7 +58,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textColor="@color/white"
+                android:textColor="@color/design_default_color_background"
                 android:backgroundTint="#2196F3"
                 android:text="22 d" />
 
@@ -73,7 +74,7 @@
         android:gravity="center"
         android:keepScreenOn="true"
         android:text="@string/dummy_content"
-        android:textColor="?attr/fullscreenTextColor"
+        android:textColor="@color/design_default_color_on_primary"
         android:textSize="50sp"
         android:textStyle="bold" />
 
