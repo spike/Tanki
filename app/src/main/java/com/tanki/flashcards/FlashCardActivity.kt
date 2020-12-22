@@ -66,6 +66,7 @@ class FlashCardActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_flash_card)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.hide()
 
         isFullscreen = true
 
@@ -110,16 +111,21 @@ class FlashCardActivity : AppCompatActivity() {
 
     private fun hide() {
         // Hide UI first
-        supportActionBar?.hide()
+/*        supportActionBar?.hide()
         fullscreenContentControls.visibility = View.GONE
         isFullscreen = false
-
+ */
         // Schedule a runnable to remove the status and navigation bar after a delay
         hideHandler.removeCallbacks(showPart2Runnable)
-        hideHandler.postDelayed(hidePart2Runnable, UI_ANIMATION_DELAY.toLong())
+
+       /* hideHandler.postDelayed(hidePart2Runnable, UI_ANIMATION_DELAY.toLong())
+*/
+        fullscreenContentControls.visibility = View.INVISIBLE
+
     }
 
     private fun show() {
+        fullscreenContentControls.visibility = View.VISIBLE
         // Show the system bar
         fullscreenContent.systemUiVisibility =
                 View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
@@ -145,7 +151,7 @@ class FlashCardActivity : AppCompatActivity() {
          * Whether or not the system UI should be auto-hidden after
          * [AUTO_HIDE_DELAY_MILLIS] milliseconds.
          */
-        private const val AUTO_HIDE = true
+        private const val AUTO_HIDE = false
 
         /**
          * If [AUTO_HIDE] is set, the number of milliseconds to wait after
