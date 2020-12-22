@@ -74,7 +74,7 @@
         android:gravity="center"
         android:keepScreenOn="true"
         android:text="@string/dummy_content"
-        android:textColor="@color/design_default_color_on_primary"
+        android:textColor="@color/design_default_color_on_secondary"
         android:textSize="50sp"
         android:textStyle="bold" />
 
