@@ -22,8 +22,10 @@ interface FlashCardApi {
             @Query("userId") number: Int
     ): Response<List<Deck>>
 
+    @GET("cards")
+    suspend fun getCards (
+            @Query("id") number: Int
+    ): Response<List<Card>>
 
-    @GET("cards/1")
-    suspend fun getCard(): Card
 
 }

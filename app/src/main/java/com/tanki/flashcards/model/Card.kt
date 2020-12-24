@@ -7,10 +7,11 @@ data class Card(
     val deckId: Int,
     val front: String,
     val back: String,
-    // archived: Boolean
-    // suspended: Boolean
-    // whiteboardEnabled: Boolean (check parent deck first)
-    // val nextDue: Date
-    // imported
-    val nextDue: Int
+    val whiteboardEnabled: Boolean, // (check parent deck first)
+    val author: String,
+    val imported: Boolean,
+    val archived: Boolean,
+    val suspended: Boolean,
+    val nextDue: Date,
+    val previousIntervalInDays: Int
 )

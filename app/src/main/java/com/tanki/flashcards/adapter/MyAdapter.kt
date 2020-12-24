@@ -12,10 +12,12 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.tanki.flashcards.FlashCardActivity
 import com.tanki.flashcards.R
+import com.tanki.flashcards.model.Card
 import com.tanki.flashcards.model.Deck
 
 class MyAdapter: RecyclerView.Adapter<MyAdapter.MyViewHolder> () {
     private var myList = emptyList<Deck>()
+    private var myCardList = emptyList<Card>()
 
     inner class MyViewHolder(itemView: View, context: Context) : RecyclerView.ViewHolder(itemView) {
         val cardTotalView: TextView = itemView.findViewById(R.id.card_total)
