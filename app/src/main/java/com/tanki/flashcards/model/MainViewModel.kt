@@ -17,10 +17,4 @@ class MainViewModel(private val repository: Repository): ViewModel() {
             myResponse3.value = response
         }
     }
-/*    fun getCards(number: Int) {
-        viewModelScope.launch {
-            val response: Response<List<Card>> = repository.getCards(number)
-            myResponse4.value = response
-        }
-    }*/
 }
