@@ -9,7 +9,7 @@ import retrofit2.Response
 
 class MainViewModel(private val repository: Repository): ViewModel() {
     val myResponse3: MutableLiveData<Response<List<Deck>>> = MutableLiveData()
-    val myResponse4: MutableLiveData<Response<List<Card>>> = MutableLiveData()
+   // val myResponse4: MutableLiveData<Response<List<Card>>> = MutableLiveData()
 
     fun getDecks(number: Int) {
         viewModelScope.launch {
