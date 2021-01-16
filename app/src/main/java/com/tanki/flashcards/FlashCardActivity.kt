@@ -10,10 +10,6 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 
-/**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
- */
 class FlashCardActivity : AppCompatActivity() {
     private lateinit var fullscreenContent: TextView
     private lateinit var fullscreenContentControls: LinearLayout
