@@ -18,9 +18,6 @@ class FlashCardActivity : AppCompatActivity() {
     @SuppressLint("InlinedApi")
     private val hidePart2Runnable = Runnable {
 
-        // Note that some of these constants are new as of API 16 (Jelly Bean)
-        // and API 19 (KitKat). It is safe to use them, as they are inlined
-        // at compile-time and do nothing on earlier devices.
         fullscreenContent.systemUiVisibility =
                 View.SYSTEM_UI_FLAG_LOW_PROFILE or
                         View.SYSTEM_UI_FLAG_FULLSCREEN or
